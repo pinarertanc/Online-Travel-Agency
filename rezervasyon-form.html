@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="travel-blog" />
+    <title>Follow My Steps - Travel BLOG</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="/css/md.css"
+      media="(min-width:768px) and (max-width: 1023.98px)"
+    />
+    <link rel="stylesheet" href="/css/lg.css" media="(min-width:1024px)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon_io (2)/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon_io (2)/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon_io (2)/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon_io (2)/favicon.ico"
+    />
+  </head>
+  <body>
+    <nav>
+      <a class="logo" href="./index.html">Follow My Steps</a>
+      <ul class="navbar-list">
+        <li><a href="./index.html">ANA SAYFA</a></li>
+        <li><a href="./turlarimiz.html">TURLARIMIZ</a></li>
+
+        <li>
+          <a href="">KURUMSAL</a>
+          <ul id="hoverMenu">
+            <li><a href="./hakkimizda.html">Hakkımızda</a></li>
+            <li>
+              <a href="./gizlilik-sozlesmesi.html">Gizlilik Sözleşmesi</a>
+            </li>
+            <li><a href="./iptal-iade.html">İptal ve İade Politikası</a></li>
+            <li><a href="./sss.html">Sıkça Sorulan Sorular</a></li>
+            <li><a href="./bize-ulasin.html">Bize Ulaşın</a></li>
+          </ul>
+        </li>
+      </ul>
+      <i class="fa-solid fa-ellipsis-vertical sidebarIcon"></i>
+      <div class="social-media">
+        <div class="instagram">
+          <a
+            aria-label="instagram"
+            href="https://www.instagram.com/pinarertanc/"
+            target="_blank"
+            ><i aria-hidden="true" class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <div class="youTube">
+          <a
+            aria-label="YouTube"
+            href="https://www.youtube.com/@FollowMyStepsTravel"
+            target="_blank"
+            ><i aria-hidden="true" class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class="main-container flex-row">
+        <div class="main-info-container">
+          <div class="contact-container">
+            <h3>İletişim Bilgileri</h3>
+            <div>
+              <input type="text" id="name" placeholder="Adınız" />
+              <input type="text" id="surname" placeholder="Soyadınız" />
+            </div>
+            <div>
+              <input type="number" id="idnumber" placeholder="T.C Kimlik No" />
+              <input type="email" id="email" placeholder="E-posta Adresiniz" />
+              <input type="tel" id="phone" placeholder="Telefon Numarası" />
+            </div>
+            <div>
+              <input type="text" id="address" placeholder="Adresiniz" />
+            </div>
+            <div>
+              <input type="text" id="country" placeholder="Ülke" />
+              <input type="text" id="city" placeholder="İl" />
+              <input type="text" id="district" placeholder="İlçe" />
+            </div>
+            <input type="radio" id="InvoiceInformation" />
+            <label for="InvoiceInformation">Fatura Bilgilerim Farklı</label>
+
+            <div id="invoice-container" class="invoice-container hidden">
+              <h3>Fatura Bilgileri</h3>
+              <div>
+                <input type="text" id="invoiceName" placeholder="Ünvan" />
+                <input
+                  type="text"
+                  id="invoiceSurname"
+                  placeholder="T.C Kimlik No"
+                />
+                <input
+                  type="text"
+                  id="invoiceIdnumber"
+                  placeholder="Vergi No"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  id="invoiceAddress"
+                  placeholder="Adresiniz"
+                />
+              </div>
+              <div>
+                <input type="text" id="invoiceCountry" placeholder="Ülke" />
+                <input type="text" id="invoiceCity" placeholder="İl" />
+                <input type="text" id="invoiceDistrict" placeholder="İlçe" />
+              </div>
+            </div>
+          </div>
+
+          <div class="guest-info-container">
+            <h3>Misafir Bilgileri</h3>
+            <div>
+              <h4>1.Yetişkin Bilgileri</h4>
+              <div>
+                <input type="text" id="guestName" placeholder="Adınız" />
+                <input type="text" id="guestSurname" placeholder="Soyadınız" />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="guestIdnumber"
+                  placeholder="T.C Kimlik No"
+                />
+                <input type="text" id="gender" placeholder="Cinsiyet" />
+                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+              </div>
+            </div>
+
+            <div class="hidden">
+              <h4>2.Yetişkin Bilgileri</h4>
+              <div>
+                <input type="text" id="guestName" placeholder="Adınız" />
+                <input type="text" id="guestSurname" placeholder="Soyadınız" />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="guestIdnumber"
+                  placeholder="T.C Kimlik No"
+                />
+                <input type="text" id="gender" placeholder="Cinsiyet" />
+                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+              </div>
+            </div>
+
+            <div class="hidden">
+              <h4>3.Yetişkin Bilgileri</h4>
+              <div>
+                <input type="text" id="guestName" placeholder="Adınız" />
+                <input type="text" id="guestSurname" placeholder="Soyadınız" />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="guestIdnumber"
+                  placeholder="T.C Kimlik No"
+                />
+                <input type="text" id="gender" placeholder="Cinsiyet" />
+                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+              </div>
+            </div>
+
+            <div class="hidden">
+              <h4>1.Çocuk Bilgileri</h4>
+              <div>
+                <input type="text" id="guestName" placeholder="Adınız" />
+                <input type="text" id="guestSurname" placeholder="Soyadınız" />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="guestIdnumber"
+                  placeholder="T.C Kimlik No"
+                />
+                <input type="text" id="gender" placeholder="Cinsiyet" />
+                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+              </div>
+            </div>
+
+            <div class="hidden">
+              <h4>2.Çocuk Bilgileri</h4>
+              <div>
+                <input type="text" id="guestName" placeholder="Adınız" />
+                <input type="text" id="guestSurname" placeholder="Soyadınız" />
+              </div>
+              <div>
+                <input
+                  type="number"
+                  id="guestIdnumber"
+                  placeholder="T.C Kimlik No"
+                />
+                <input type="text" id="gender" placeholder="Cinsiyet" />
+                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="summary-container">
+          <div class="summary">
+            <h3 class="summaryHeader marginZero">REZERVASYON DETAYLARI</h3>
+            <div class="margin5 section-box">
+              <h3 id="summaryTourName" class="margin5"></h3>
+            </div>
+            <div class="section-box">
+              <h4 class="margin5" id="summaryDate">Tur Tarihi:</h4>
+            </div>
+            <div class="section-box">
+              <h4 class="margin5">Konaklama Detayları</h4>
+              <p class="margin5">Konaklama: 5* Otel</p>
+              <p class="margin5" id="summaryAdult">1.Oda:</p>
+              <p class="margin5" id="summaryKid1">Çocuk 1:</p>
+              <p class="margin5" id="summaryKid2">Çocuk 2:</p>
+            </div>
+            <p class="margin5 section-box">
+              **Rezervasyonunuzu tamamlamadan önce lütfen yukarıdaki bilgileri
+              kontrol ediniz.
+            </p>
+            <h4 class="marginZero textalignRight" id="summaryTotal">Toplam:</h4>
+            <a href="" id="buttonPurchase" class="button button-purchase"
+              >SATIN AL</a
+            >
+            <div></div>
+          </div>
+          <div id="TourProgram"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-company">
+        <a class="logo night-blue-text" href="./index.html">Follow My Steps</a>
+      </div>
+      <div class="footer-info flex-column">
+        <a href="./hakkimizda.html">Hakkımızda</a>
+        <a href="./gizlilik-sozlesmesi.html">Gizlilik Sözleşmesi</a>
+      </div>
+      <div class="footer-info flex-column">
+        <a href="./sss.html">Sıkça Sorulan Sorular</a>
+        <a href="./iptal-iade.html">İptal ve İade Politikası</a>
+      </div>
+      <div class="footer-contact" id="footer-contact">
+        <div class="footer-social">
+          <div class="instagram">
+            <a
+              aria-label="instagram"
+              href="https://www.instagram.com/followmysteps_travel/"
+              target="_blank"
+              ><i aria-hidden="true" class="fab fa-instagram"></i
+            ></a>
+          </div>
+          <div class="youTube">
+            <a
+              aria-label="YouTube"
+              href="https://www.youtube.com/@FollowMyStepsTravel"
+              target="_blank"
+              ><i aria-hidden="true" class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="mail">
+          <a
+            class="night-blue-text"
+            href="mailto:pinar@followmysteps.com.tr"
+            aria-label="noreferrer"
+            target="_blank"
+            ><i aria-hidden="true" class="fa-regular fa-envelope"></i>
+            pinar@followmysteps.com.tr
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="navbartoggle.js"></script>
+    <script src="tourdata.js"></script>
+    <script src="rezervasyon-form.js"></script>
+  </body>
+</html>

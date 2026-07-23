@@ -1,0 +1,800 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --night-blue: #1A2A44;
+  --deep-green: #12221a;
+  --soft-green: #243e30;
+  --sunny-yellow: #C9A445;
+  --classic-beige: #F5EED8;
+}
+
+html {
+  font-size: clamp(0.5rem, 0.65rem + 1.5vw, 1rem);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: quicksand, sans-serif;
+  background-color: var(--classic-beige);
+}
+
+main{
+  width: 100%;
+  padding: 24px 16px 40px 16px;
+}
+
+.logo {
+  font-family: 'Caveat', sans-serif;
+  font-size: 40px;
+  color: var(--classic-beige);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: var(--soft-green);
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--classic-beige);
+  text-decoration: none;
+}
+
+nav>.social-media {
+  display: none;
+}
+
+.sidebarIcon {
+  display: block;
+  color: var(--classic-beige);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 1001;
+}
+
+.navbar-list {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 270px;
+  height: 100vh;
+  background-color: var(--soft-green);
+
+  display: flex;
+  flex-direction: column;
+  padding: 70px 24px 30px 24px;
+  gap: 16px;
+  list-style: none;
+
+  transition: right 0.35s ease-in-out;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+  margin: 0;
+}
+
+.navbar-list.active {
+  right: 0;
+}
+
+.navbar-list>li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 10px;
+}
+
+.navbar-list a {
+  color: var(--classic-beige);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+#hoverMenu {
+  display: block;
+  position: static;
+  background: transparent;
+  padding-left: 12px;
+  margin-top: 8px;
+  list-style: none;
+}
+
+#hoverMenu li {
+  border-bottom: none;
+}
+
+#hoverMenu li a {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 0;
+}
+
+.first-album-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mobilde 2 sütunlu album */
+  gap: 12px;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.first-album-container .photo-card {
+  height: 180px;
+  width:100%;
+  min-width:0;
+}
+
+.first-album-container .photo-card img,
+.second-album-container .photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Mobilde açısal yamuklukları hafifletiyoruz ki ekran daralınca taşmasın */
+.card-1, .card-2, .card-3, .card-4, .card-5, .card-6,
+.card-7, .card-8, .card-9, .card-10 {
+  transform: none !important;
+}
+
+.main-slogan-container {
+  width: 100%;
+  margin-block: 30px 10px;
+  margin-inline: 0;
+  text-align: center;
+  align-items: center;
+}
+
+.hero-slogan {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  color: #273c14;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  color: transparent;
+  -webkit-text-stroke: 1px #6d4a03;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.secondary-title {
+  font-size: 0.95rem;
+  color: #273c14;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Portre Kart Kutusu */
+.main-container > div {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  /* ❌ min-height KALDIRILDI (Boşluk oluşturan ana nedendi) */
+}
+
+/* DİKEY (PORTRE) RESİM ALANI */
+.main-container picture {
+  width: 100%;
+  height: 380px; /* Görselin dikey yüksekliği */
+  display: block;
+}
+
+.portreit-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* BİLGİ ALANI (Görsele Bitişik) */
+.purchaseDiv {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  /* ❌ flex-grow KALDIRILDI (Resimden uzaklaşmasını engeller) */
+}
+
+.purchaseDiv h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a2e23;
+  margin-bottom: 2px;
+}
+
+.purchaseDiv p {
+  font-size: 0.88rem;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.purchaseDiv p i {
+  color: #e2b714;
+}
+
+/* Alt Taraf: Buton ve Fiyat Hizalaması */
+.purchaseDiv .space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  /* ❌ margin-top: auto KALDIRILDI */
+}
+
+.button--reservation {
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #1a2e23;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.button--reservation:hover {
+  background-color: #e2b714;
+  color: #1a2e23;
+}
+
+.purchaseDiv h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a2e23;
+}
+
+
+
+
+
+footer {
+  background-color: #1a2e23;
+  /* Koyu orman yeşili teması */
+  padding: 40px 20px 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 32px;
+  /* Bölümler arası dikey mesafe */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 1. LOGO BÖLÜMÜ */
+.footer-company .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* 2. BİLGİ LİNKLERİ (İki ayrı footer-info div'i) */
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.footer-info a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 4px 0;
+  /* Mobilde rahat tıklanması için dikey alan */
+  transition: color 0.25s ease;
+}
+
+.footer-info a:hover {
+  color: var(--sunny-yellow, #e2b714);
+}
+
+/* 3. İLETİŞİM VE SOSYAL MEDYA */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.footer-contact h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Sosyal Medya İkonları */
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-social a {
+  color: #ffffff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: var(--sunny-yellow, #e2b714);
+  color: #1a2e23;
+  transform: translateY(-3px);
+}
+
+/* E-Posta */
+.footer-contact .mail a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+  word-break: break-word;
+  /* Mobilde uzun mail adreslerinin taşmasını önler */
+}
+
+.footer-contact .mail a:hover {
+  color: var(--sunny-yellow, #e2b714);
+}
+
+.instagram,
+.youTube {
+  padding: 8px 8px;
+  border-radius: 50px 50px;
+  background-color: var(--sunny-yellow);
+}
+
+.landscape-image {
+  width: 760px;
+  height: 400px;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+}
+
+.square-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 5%;
+}
+
+span.hastag {
+  color: var(--sunny-yellow);
+  font-weight: bold;
+}
+
+p>a {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.faqQuestionDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 88vw;
+  padding: 0 25px;
+  background-color: var(--classic-beige);
+  border-radius: 5px 5px 0 0;
+  border: 2px solid var(--soft-green);
+  margin: 10px auto;
+  cursor: pointer;
+  align-items: center;
+}
+
+.question {
+  color: var(--soft-green);
+}
+
+.faqAnswerDiv {
+  width: 88vw;
+  padding: 2px 25px;
+  border-radius: 0 0 5px 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  margin: 10px auto;
+  color: var(--soft-green);
+}
+
+.reservationDiv {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px 13px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.secondary-button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  text-align: center;
+  color: var(--soft-green);
+  padding: 0px 5px;
+}
+
+.button--reservation {
+  background-color: var(--classic-beige);
+  border: none;
+  color: var(--soft-green);
+  width: 14rem;
+}
+
+.button-purchase {
+  background-color: var(--sunny-yellow);
+  border: none;
+  color: var(--soft-green);
+  width: 180px;
+  margin: 0px 5px 5px 370px;
+}
+
+.btn-primary {
+  background-color: var(--soft-green);
+  color: var(--classic-beige);
+}
+
+.button:hover {
+  background-color: var(--deep-green);
+  color: var(--classic-beige);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.secondary-button:hover {
+  transform: translateY(-2px);
+
+}
+
+.marginZero {
+  margin: 0;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.main-grid-table {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+}
+
+.exel-cell {
+  padding: 10px;
+  justify-self: center;
+}
+
+.reservationDiv {
+  justify-content: space-between;
+  background-color: var(--night-blue);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  color: var(--classic-beige);
+  border-radius: 5px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.paddingRight5 {
+  padding-right: 5px;
+}
+
+.marginTop5 {
+  margin-top: 5px;
+}
+
+.margin5 {
+  margin: 5px;
+}
+
+.summary {
+  width: 480px;
+  height: 400px;
+  border: 1px solid var(--night-blue);
+}
+
+.summaryHeader {
+  background-color: var(--night-blue);
+  color: var(--classic-beige);
+  text-align: center;
+  padding: 10px;
+}
+
+.section-box {
+  border-bottom: 1px solid var(--night-blue);
+  width: 400px;
+  margin: 0 auto;
+}
+
+.textalignRight {
+  text-align: right;
+  padding: 20px;
+}
+
+.purchaseDiv {
+  justify-content: space-between;
+  background-color: var(--classic-beige);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  color: var(--night-blue);
+  border-radius: 5px;
+  margin: 0px auto;
+  padding: 10px 20px;
+  gap: 10px;
+}
+
+.quota-table {
+  width: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  align-items: center;
+  padding: 10px;
+  justify-items: center;
+  border: 1px solid #d0d0d0;
+}
+
+tr {
+  text-align: center;
+}
+
+.main-info-container {
+  width: 80%;
+}
+
+.main-info-container input:not([type="radio"]) {
+  width: 40%;
+}
+
+.experience-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 6px 8px;
+  background-color: var(--soft-green);
+  height: 14vh;
+  text-align: center;
+  justify-content: center;
+  margin-top: 18px;
+  width:100%;
+}
+
+.inner-exp {
+  margin: 0;
+  padding: 6px 6px;
+}
+
+.inner-exp-header {
+  margin: 0;
+  padding: 0;
+  color: var(--sunny-yellow);
+  font-family: "Caveat";
+  font-size:x-small;
+
+}
+
+.inner-exp-text {
+  margin: 0;
+  padding: 0;
+  color: var(--classic-beige);
+  opacity: 0.5;
+  font-size: smaller;
+
+}
+
+.star-icon {
+  padding: auto auto;
+  color: var(--sunny-yellow);
+  opacity: 0.5;
+  margin-top: 20px;
+  font-size: smaller;
+}
+
+.arrow-icon{
+  color:var(--soft-green);
+}
+
+.populer-tours-container {
+  margin-top:60px;
+  padding:0;
+  width: 100%;
+}
+
+.populer-tours-header {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style:italic;
+  font-size: 1.8rem;
+  color: #273c14;
+  text-align:left;
+  margin-top:5px;
+  margin-bottom:5px;
+}
+
+.populer-tours-header2 {
+  color: var(--sunny-yellow);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom:0;
+}
+
+.populer-tours-inner-text {
+  color: var(--soft-green);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  margin:0;
+}
+
+.tour-row-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.tour-row {
+  padding: 16px;
+  display: flex;
+  flex-direction: column; /* Mobilde kart görünümü */
+  align-items: flex-start;
+  gap: 16px;
+  background-color: var(--classic-beige);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tour-row-info {
+  width: 100%;
+}
+
+.divider {
+  display: none;
+}
+
+.populer-tours-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Sabit 12rem yerine otomatik boşluk */
+  align-items: center;
+  width:100%;
+}
+
+.secondary-button {
+  color: var(--soft-green);
+  text-decoration: none;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.sertificate-icon {
+  color: var(--sunny-yellow);
+  margin: 5px;
+}
+
+.clock-icon{
+  color:var(--soft-green);
+}
+.section2 {
+  background-color: var(--soft-green);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top:40px;
+  padding:15px;
+  border-radius: 5%;
+  width:100%;
+}
+
+.section2-slogan-div {
+  width: 100%;
+}
+
+.section2-slogan {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--classic-beige);
+  margin-block: 10px !important;
+  text-align:left;
+}
+
+.travel-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.frame-div {
+  background-color:var(--classic-beige);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  width:100%;
+}
+
+.travel-container-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sertificate-icon {
+  color: var(--sunny-yellow);
+  font-size: 1.5rem;
+  margin-top: 2px;
+}
+
+/* 7. İKİNCİ ALBÜM SEKSİYONU */
+.second-album-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 0;
+  width: 100%;
+  margin-block: 40px;
+  margin-inline: 0;
+}
+
+.second-album-container .photo-card {
+  height: 180px;
+  width: 100%;
+}
