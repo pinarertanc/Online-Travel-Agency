@@ -390,8 +390,8 @@ footer {
 }
 
 .landscape-image {
-  width: 760px;
-  height: 400px;
+  width: 250px;
+  height: 50px;
   border-radius: 5px 5px 0 0;
   object-fit: cover;
 }
@@ -422,10 +422,9 @@ p>a {
   justify-content: space-between;
   width: 88vw;
   padding: 0 25px;
-  background-color: var(--classic-beige);
   border-radius: 5px 5px 0 0;
   border: 2px solid var(--soft-green);
-  margin: 10px auto;
+  margin:5px auto 0 auto;
   cursor: pointer;
   align-items: center;
 }
@@ -435,11 +434,12 @@ p>a {
 }
 
 .faqAnswerDiv {
-  width: 88vw;
+  background-color:var(--sunny-yellow);
+  width: 85vw;
   padding: 2px 25px;
   border-radius: 0 0 5px 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  margin: 10px auto;
+  margin: 0 auto;
   color: var(--soft-green);
 }
 
@@ -486,7 +486,7 @@ p>a {
   background-color: var(--sunny-yellow);
   border: none;
   color: var(--soft-green);
-  width: 180px;
+  width: 100px;
   margin: 0px 5px 5px 370px;
 }
 
@@ -518,6 +518,7 @@ p>a {
 .main-grid-table {
   display: grid;
   grid-template-columns: 1fr 500px;
+  gap:90px;
 }
 
 .exel-cell {
@@ -527,13 +528,13 @@ p>a {
 
 .reservationDiv {
   justify-content: space-between;
-  background-color: var(--night-blue);
+  background-color:var(--soft-green);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   color: var(--classic-beige);
   border-radius: 5px;
   margin: 30px auto;
   padding: 10px 20px;
-  gap: 10px;
+  gap: 7px;
 }
 
 .paddingRight5 {
@@ -551,11 +552,11 @@ p>a {
 .summary {
   width: 480px;
   height: 400px;
-  border: 1px solid var(--night-blue);
+  border: 1px solid var(--sunny-yellow);
 }
 
 .summaryHeader {
-  background-color: var(--night-blue);
+  background-color: var(--sunny-yellow);
   color: var(--classic-beige);
   text-align: center;
   padding: 10px;

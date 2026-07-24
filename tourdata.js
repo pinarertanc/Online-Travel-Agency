@@ -78,9 +78,9 @@ const TOUR_DATA = [
       "3. Gün": "detaylandırılacaktır"
     },
     images: {
-      desktop: "assets/hallstatt-lg.webp",
-      tablet: "assets/hallstatt-md.webp",
-      mobile: "assets/hallstatt-sm.png"
+      desktop: "assets/istanbul-lg.webp",
+      tablet: "assets/istanbul-md.webp",
+      mobile: "assets/istanbul-sm.webp"
     },
     info: "Tarihi yarımada, Boğaziçi ve kültürel rotaları keşif. Gündüzü ve gecesi birbirinden farklı İstanbul deneyimi."
   },
@@ -119,9 +119,9 @@ const TOUR_DATA = [
       "2. Gün": "detaylandırılacaktır"
     },
     images: {
-      desktop: "assets/hallstatt-lg.webp",
-      tablet: "assets/hallstatt-md.webp",
-      mobile: "assets/hallstatt-sm.png"
+      desktop: "assets/norvec-lg.webp",
+      tablet: "assets/norvec-md.webp",
+      mobile: "assets/norvec-sm.png"
     },
     info: "Görkemli kuzey ışıkları dansını izleme ve fotoğraflama amaçlı heyecan dolu bir doğa seyahati."
   }

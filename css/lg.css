@@ -344,13 +344,12 @@ footer {
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
 }
 
-
-
-
-
-
-
-
+.landscape-image {
+  width: 767px;
+  height: 400px;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+}
 
 
 
@@ -367,16 +366,11 @@ footer {
 }
 
 .faqAnswerDiv {
-  max-width: 68vw;
+  max-width: 67vw;
   padding: 2px 25px;
   border-radius: 0 0 5px 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-}
 
-.faqQuestion-container {
-  margin: 10px auto;
-  max-width: 68vw;
-  padding: 50px 100px;
 }
 
 .experience-container {

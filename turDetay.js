@@ -1,11 +1,13 @@
 const urlParams = new URLSearchParams(window.location.search);  
-const selectedTour = urlParams.get("lokasyon");
+const selectedTourId = urlParams.get("id");
 
-if(!selectedTour || !TOUR_DATA[selectedTour]){
-  window.location.href="turlarimiz.html";
+const ACTIVE_TOUR = typeof TOUR_DATA !== 'undefined' 
+  ? TOUR_DATA.find(tour => tour.id === selectedTourId)
+  : null;
+
+  if (!selectedTourId || !ACTIVE_TOUR) {
+  window.location.href = "turlarimiz.html";
 }
-
-const ACTIVE_TOUR = TOUR_DATA[selectedTour];
 
 const summaryDate = document.getElementById("summaryDate");
 const summaryAdult = document.getElementById("summaryAdult");
@@ -36,7 +38,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     selectedDate.appendChild(option);
 });
 
-const savedState = localStorage.getItem(`res_${selectedTour}`);
+const savedState = localStorage.getItem(`res_${selectedTourId}`);
 
 if(savedState){
     const data = JSON.parse(savedState);
@@ -103,7 +105,7 @@ selectedKid2.addEventListener("change", getTotalPrice);
 
 const tourProgram = document.getElementById("TourProgram");
 tourProgram.innerHTML = "<h4 class='marginZero'>Tur Programı:</h4>";
-for (const [day, activity] of Object.entries(ACTIVE_TOUR.Program)) {
+for (const [day, activity] of Object.entries(ACTIVE_TOUR.program)) {
   const p = document.createElement("p");
   p.textContent = `${day}: ${activity}`;
   p.classList.add("margin5");
@@ -114,9 +116,9 @@ const desktopImage = document.getElementById("desktopImage");
 const mediumImage = document.getElementById("mediumImage");
 const smallImage = document.getElementById("smallImage");
 
-desktopImage.src = ACTIVE_TOUR.Images.desktop;
-mediumImage.srcset = ACTIVE_TOUR.Images.medium;
-smallImage.srcset = ACTIVE_TOUR.Images.small;
+desktopImage.srcset = ACTIVE_TOUR.images.desktop;
+mediumImage.srcset = ACTIVE_TOUR.images.tablet;
+smallImage.src = ACTIVE_TOUR.images.mobile;
 
 
 function saveToLocalStorage() {
@@ -126,15 +128,16 @@ function saveToLocalStorage() {
     kid1: selectedKid1.value,
     kid2: selectedKid2.value
   };
-  localStorage.setItem(`res_${selectedTour}`, JSON.stringify(reservationState));
+  localStorage.setItem(`res_${selectedTourId}`, JSON.stringify(reservationState));
 }
 
 const purchaseButton = document.getElementById("buttonPurchase");
 purchaseButton.addEventListener("click",(e)=>{
 
   if(selectedDate.value !== "" && selectedAdult.value !== "" && selectedKid1.value !== "" && selectedKid2.value !== ""){
-   purchaseButton.href =`rezervasyon-form.html?lokasyon=${selectedTour}`
+   purchaseButton.href =`rezervasyon-form.html?id=${selectedTourId}`
   } else {
+    e.preventDefault();
     alert("Lütfen tüm tercih alanlarının doldurulduğundan emin olun.");
   }
 });
