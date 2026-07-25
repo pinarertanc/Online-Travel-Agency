@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);  
-const selectedTour = urlParams.get("lokasyon");
+const selectedTour = urlParams.get("id");
 
-const ACTIVE_TOUR = TOUR_DATA[selectedTour];
+const ACTIVE_TOUR = TOUR_DATA ? TOUR_DATA.find(tour => tour.id === selectedTour) : null;
 
 window.addEventListener("DOMContentLoaded", ()=> {
 
@@ -11,6 +11,28 @@ const summaryKid1 = document.getElementById("summaryKid1");
 const summaryKid2 = document.getElementById("summaryKid2");
 const summaryTotal = document.getElementById("summaryTotal");
 const summaryTourName = document.getElementById("summaryTourName");
+const summaryAdultFullName = document.getElementById("summaryAdultFullName");
+const guestSurnameInput = document.getElementById("guest1Surname");
+const guestNameInput = document.getElementById("guest1Name");
+
+
+function updateSummaryGuestInfo (){
+  const name = guestNameInput.value.trim();
+  const surname = guestSurnameInput.value.trim();
+
+  if(summaryAdultFullName) summaryAdultFullName.textContent = `1.Yetişkin: ${name} ${surname}`;
+
+  if (summaryAdultFullName) {
+      if (name || surname) {
+        summaryAdultFullName.textContent = `1.Yetişkin: ${name} ${surname}`;
+      } else {
+        summaryAdultFullName.textContent = "1.Yetişkin: -";
+      }
+    }
+}
+
+guestNameInput.addEventListener("input",updateSummaryGuestInfo);
+guestSurnameInput.addEventListener("input", updateSummaryGuestInfo);
 
 const savedState = localStorage.getItem(`res_${selectedTour}`);
 

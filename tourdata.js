@@ -3,6 +3,7 @@ const TOUR_DATA = [
   {
     id: "hallstatt",
     name: "UNESCO Korumasında Hallstatt",
+    country:"Avusturya",
     dates: [
       { text: "20/05/2027 - 23/05/2027", quota: 12 },
       { text: "15/08/2027 - 18/08/2027", quota: 12 }
@@ -45,6 +46,7 @@ const TOUR_DATA = [
   {
     id: "istanbul",
     name: "Masalsı Şehir İstanbul",
+    country: "Turkiye",
     dates: [
       { text: "05/06/2027 - 11/06/2027", quota: 12 },
       { text: "15/08/2027 - 21/08/2027", quota: 12 }
@@ -87,6 +89,7 @@ const TOUR_DATA = [
   {
     id: "norvec",
     name: "Norveç Kuzey Işıkları",
+    country:"Norveç",
     dates: [
       { text: "05/12/2027 - 09/12/2027", quota: 12 },
       { text: "15/01/2028 - 19/01/2028", quota: 12 }

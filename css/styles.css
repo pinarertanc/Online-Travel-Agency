@@ -4,7 +4,6 @@
 }
 
 :root {
-  --night-blue: #1A2A44;
   --deep-green: #12221a;
   --soft-green: #243e30;
   --sunny-yellow: #C9A445;
@@ -214,6 +213,13 @@ nav>.social-media {
   display: block;
 }
 
+.portreit-image2 {
+  width:300px;
+  height:450px;
+  object-fit: cover;
+  display: block;
+}
+
 /* BİLGİ ALANI (Görsele Bitişik) */
 .purchaseDiv {
   padding: 16px;
@@ -243,21 +249,19 @@ nav>.social-media {
   color: #e2b714;
 }
 
-/* Alt Taraf: Buton ve Fiyat Hizalaması */
 .purchaseDiv .space-between {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 10px;
   border-top: 1px solid #f0f0f0;
-  /* ❌ margin-top: auto KALDIRILDI */
 }
 
 .button--reservation {
   display: inline-block;
   padding: 10px 16px;
   background-color: #1a2e23;
-  color: #ffffff;
+  color:var(--classic-beige);
   text-decoration: none;
   font-size: 0.82rem;
   font-weight: 700;
@@ -434,7 +438,7 @@ p>a {
 }
 
 .faqAnswerDiv {
-  background-color:var(--sunny-yellow);
+  background-color:#ffffff;
   width: 85vw;
   padding: 2px 25px;
   border-radius: 0 0 5px 5px;
@@ -480,14 +484,6 @@ p>a {
   border: none;
   color: var(--soft-green);
   width: 14rem;
-}
-
-.button-purchase {
-  background-color: var(--sunny-yellow);
-  border: none;
-  color: var(--soft-green);
-  width: 100px;
-  margin: 0px 5px 5px 370px;
 }
 
 .btn-primary {
@@ -570,18 +566,8 @@ p>a {
 
 .textalignRight {
   text-align: right;
-  padding: 20px;
-}
-
-.purchaseDiv {
-  justify-content: space-between;
-  background-color: var(--classic-beige);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  color: var(--night-blue);
-  border-radius: 5px;
-  margin: 0px auto;
-  padding: 10px 20px;
-  gap: 10px;
+  padding-block: 3px;
+  padding-inline-end: 50px;
 }
 
 .quota-table {
@@ -595,14 +581,6 @@ p>a {
 
 tr {
   text-align: center;
-}
-
-.main-info-container {
-  width: 80%;
-}
-
-.main-info-container input:not([type="radio"]) {
-  width: 40%;
 }
 
 .experience-container {
@@ -798,4 +776,224 @@ tr {
 .second-album-container .photo-card {
   height: 180px;
   width: 100%;
+}
+
+.green-text{
+  color:var(--soft-green);
+}
+
+.companyDiv{
+  display: flex;
+  flex-direction: row;
+  gap:90px;
+  height: 40rem;
+  padding-inline:60px;
+  padding-block:60px;
+}
+
+.reservation-main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Sol Taraf (İletişim & Misafir) */
+.contact-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-container,
+.guest-info-container {
+  background-color: #ffffff;
+  border: 1px solid rgba(36, 62, 48, 0.15); /* Soft-green transparan kenarlık */
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(18, 34, 26, 0.05);
+}
+
+.contact-container h3,
+.guest-info-container h3 {
+  color: var(--deep-green);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--classic-beige);
+}
+
+.guest-info-container h4 {
+  color: var(--soft-green);
+  font-size: 1rem;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+/* İnput Grupları (Mobilde Alt Alta) */
+.contact-container > div,
+.guest-info-container > div > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* İnput Stilleri */
+.contact-container input[type="text"],
+.contact-container input[type="number"],
+.contact-container input[type="email"],
+.contact-container input[type="tel"],
+.guest-info-container input[type="text"],
+.guest-info-container input[type="number"],
+.guest-info-container input[type="date"] {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(36, 62, 48, 0.25);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--deep-green);
+  background-color: #FBF9F1;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+
+/* İnput Odaklanma (Focus State) */
+.contact-container input:focus,
+.guest-info-container input:focus {
+  border-color: var(--sunny-yellow);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(201, 164, 69, 0.25);
+}
+
+/* Fatura Kutusu */
+#InvoiceInformation {
+  margin-right: 0.4rem;
+  accent-color: var(--sunny-yellow); /* Radio buton marka rengi */
+  cursor: pointer;
+}
+
+label[for="InvoiceInformation"] {
+  font-size: 0.9rem;
+  color: var(--soft-green);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.invoice-container {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--sunny-yellow);
+}
+
+/* --------------------------------------------------------------------------
+   PURCHASE SUMMARY (MARKA RENKLERİYLE ÖZET PANELİ)
+   -------------------------------------------------------------------------- */
+
+.purchase-summary-container {
+  width: 100%;
+}
+
+.purchase-summary {
+  background-color: #ffffff;
+  border: 1px solid rgba(36, 62, 48, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(18, 34, 26, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Özet Başlığı */
+.purchase-summaryHeader {
+  color: var(--deep-green);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--sunny-yellow);
+}
+
+/* Özet İçindeki Kutular */
+.purchase-summary > div {
+  background-color: #FBF9F1;
+  border: 1px solid rgba(201, 164, 69, 0.3);
+  border-radius: 8px;
+  padding: 0.75rem 0.85rem;
+}
+
+.purchase-summary h3 {
+  color: var(--deep-green);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.purchase-summary h4 {
+  color: var(--soft-green);
+  font-size: 0.92rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem 0;
+}
+
+.purchase-summary p {
+  color: var(--deep-green);
+  font-size: 0.88rem;
+  margin: 0.2rem 0;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* Uyarı Notu ve Toplam Fiyat */
+.reminder-note {
+  font-size: 0.8rem;
+  color: var(--soft-green);
+  margin: 0.25rem 0;
+  line-height: 1.35;
+  font-style: italic;
+}
+
+.summary-total {
+  color: var(--deep-green);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: right;
+  margin: 0.25rem 0;
+  border-top: 1px dashed var(--sunny-yellow);
+  padding-top: 0.5rem;
+}
+
+/* Satın Al Butonu (Güneş Sarısı Vurgu) */
+.button-purchase {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  background-color: var(--sunny-yellow);
+  color: var(--deep-green) !important;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(201, 164, 69, 0.3);
+}
+
+.button-purchase:hover {
+  background-color: var(--soft-green);
+  color: var(--classic-beige) !important;
+  box-shadow: 0 4px 12px rgba(36, 62, 48, 0.4);
+}
+
+.button-purchase:active {
+  transform: scale(0.98);
+}
+
+.hidden {
+  display: none !important;
 }

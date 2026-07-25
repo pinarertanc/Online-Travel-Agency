@@ -107,3 +107,55 @@ footer {
 .main-container picture {
   height: 400px; /* Tablette resmin portre yüksekliği */
 }
+
+.reservation-main-container {
+  padding: 1.5rem 2rem;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Kapsayıcı Kartlar */
+.contact-container,
+.guest-info-container,
+.purchase-summary {
+  padding: 1.5rem;
+}
+
+/* İnput Gruplarını Tablette Yan Yana Dizme */
+.contact-container > div,
+.guest-info-container > div > div {
+  flex-direction: row; /* Yan yana dizilim */
+  gap: 1rem;
+}
+
+/* Input'ların Eşit Esnemesi */
+.contact-container input,
+.guest-info-container input {
+  flex: 1;
+}
+
+/* Özet Paneli Tablet Düzenlemeleri */
+.purchase-summary-container {
+  width: 100%;
+}
+
+.purchase-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Bilgileri 2 sütunlu grid yapar */
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Başlık ve Buton Tablette Tam Genişlik Kaplasın */
+.purchase-summaryHeader,
+.reminder-note,
+.summary-total,
+.button-purchase {
+  grid-column: span 2;
+}
+
+.summary-total {
+  text-align: right;
+  margin-top: 0.5rem;
+}

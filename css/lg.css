@@ -538,3 +538,35 @@ footer {
   border: 1px solid var(--sunny-yellow);
   padding:6px;
 }
+
+.reservation-main-container {
+    flex-direction: row; /* Sol ve Sağ olarak 2 sütuna böler */
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  /* Sol Taraf (Form) */
+  .contact-info-container {
+    flex: 1 1 65%;
+  }
+
+  .contact-container > div,
+  .guest-info-container > div > div {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .contact-container input,
+  .guest-info-container input {
+    flex: 1;
+  }
+
+  /* Sağ Taraf (Summary Özet Paneli) */
+  .purchase-summary-container {
+    flex: 1 1 35%;
+    position: sticky;
+    top: 2rem; /* Ekran aşağı kaydırılırken sağ paneli sabit tutar */
+  }
