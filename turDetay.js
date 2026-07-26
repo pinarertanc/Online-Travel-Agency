@@ -24,6 +24,8 @@ const selectedKid2 = document.getElementById("kid2-select");
 const tableBody = document.getElementById("dynamic-table-body");
 
 
+
+
 window.addEventListener("DOMContentLoaded", ()=>{
   ACTIVE_TOUR.dates.forEach((dateObj)=>{
     const option = document.createElement("option");
@@ -74,7 +76,7 @@ getTotalPrice();
 
 function updateSummary(){
   summaryDate.textContent = "Tur Tarihi: " + selectedDate.value;
-  summaryAdult.textContent = "1.Oda: " + selectedAdult.value;
+  summaryAdult.textContent = "1 Oda: " + selectedAdult.value;
   summaryKid1.textContent = "Çocuk 1: " + selectedKid1.value;
   summaryKid2.textContent = "Çocuk 2: " + selectedKid2.value;
   summaryTourName.textContent = ACTIVE_TOUR.name;
@@ -141,5 +143,11 @@ purchaseButton.addEventListener("click",(e)=>{
     alert("Lütfen tüm tercih alanlarının doldurulduğundan emin olun.");
   }
 });
+
+const addRoomButton = document.getElementById("add-room");
+
+addRoomButton.addEventListener("click",(e)=>{
+  const NewRoomRow = document.createElement("")
+})
 
    

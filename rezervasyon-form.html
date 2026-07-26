@@ -89,15 +89,14 @@
       <section class="reservation-main-container flex-row">
         <div class="contact-info-container">
           <div class="contact-container">
-            <h3>İletişim Bilgileri</h3>
+            <h3 class="green-text">İletişim Bilgileri</h3>
             <div>
-              <input type="text" id="name" placeholder="Adınız" />
-              <input type="text" id="surname" placeholder="Soyadınız" />
+              <input type="text" id="contactname" placeholder="Adınız" />
+              <input type="text" id="contactsurname" placeholder="Soyadınız" />
             </div>
             <div>
-              <input type="number" id="idnumber" placeholder="T.C Kimlik No" />
-              <input type="email" id="email" placeholder="E-posta Adresiniz" />
-              <input type="tel" id="phone" placeholder="Telefon Numarası" />
+              <input type="email" id="contactemail" placeholder="E-posta Adresiniz" />
+              <input type="tel" id="contactphone" placeholder="Telefon Numarası" />
             </div>
             <div>
               <input type="text" id="address" placeholder="Adresiniz" />
@@ -107,7 +106,7 @@
               <input type="text" id="city" placeholder="İl" />
               <input type="text" id="district" placeholder="İlçe" />
             </div>
-            <input type="radio" id="InvoiceInformation" />
+            <input type="checkbox" id="InvoiceInformation" />
             <label for="InvoiceInformation">Fatura Bilgilerim Farklı</label>
 
             <div id="invoice-container" class="invoice-container hidden">
@@ -116,13 +115,8 @@
                 <input type="text" id="invoiceName" placeholder="Ünvan" />
                 <input
                   type="text"
-                  id="invoiceSurname"
-                  placeholder="T.C Kimlik No"
-                />
-                <input
-                  type="text"
-                  id="invoiceIdnumber"
-                  placeholder="Vergi No"
+                  id="taxno"
+                  placeholder="T.C No / Vergi No"
                 />
               </div>
               <div>
@@ -146,20 +140,19 @@
               <h4>1.Yetişkin Bilgileri</h4>
               <div>
                 <input id="guest1Name" type="text" placeholder="Adınız" />
-                <input id="guest1Surname" type="text" id="guestSurname" placeholder="Soyadınız" />
+                <input id="guest1Surname" type="text" placeholder="Soyadınız" />
               </div>
               <div>
                 <input
-                  type="number"
-                  id="guestIdnumber"
+                  type="text"
+                  id="guest1Tc"
                   placeholder="T.C Kimlik No"
                 />
-                <input type="text" id="gender" placeholder="Cinsiyet" />
-                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+                <input type="date" id="birthDate1" placeholder="Doğum Tarihi" />
               </div>
             </div>
 
-            <div class="hidden">
+            <div class="hidden" id="guest2Info">
               <h4>2.Yetişkin Bilgileri</h4>
               <div>
                 <input type="text" id="guest2Name" placeholder="Adınız" />
@@ -167,16 +160,15 @@
               </div>
               <div>
                 <input
-                  type="number"
-                  id="guestIdnumber"
+                  type="text"
+                  id="guest2Tc"
                   placeholder="T.C Kimlik No"
                 />
-                <input type="text" id="gender" placeholder="Cinsiyet" />
-                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+                <input type="date" id="birthDate2" placeholder="Doğum Tarihi" />
               </div>
             </div>
 
-            <div class="hidden">
+            <div class="hidden" id="guest3Info">
               <h4>3.Yetişkin Bilgileri</h4>
               <div>
                 <input type="text" id="guest3Name" placeholder="Adınız" />
@@ -184,51 +176,16 @@
               </div>
               <div>
                 <input
-                  type="number"
-                  id="guestIdnumber"
+                  type="text"
+                  id="guest3Tc"
                   placeholder="T.C Kimlik No"
                 />
-                <input type="text" id="gender" placeholder="Cinsiyet" />
-                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
-              </div>
-            </div>
-
-            <div class="hidden">
-              <h4>1.Çocuk Bilgileri</h4>
-              <div>
-                <input type="text" id="Kid1Name" placeholder="Adınız" />
-                <input type="text" id="Kid1Surname" placeholder="Soyadınız" />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  id="guestIdnumber"
-                  placeholder="T.C Kimlik No"
-                />
-                <input type="text" id="Kid1gender" placeholder="Cinsiyet" />
-                <input type="date" id="Kid1birthDate" placeholder="Doğum Tarihi" />
-              </div>
-            </div>
-
-            <div class="hidden">
-              <h4>2.Çocuk Bilgileri</h4>
-              <div>
-                <input type="text" id="Kid2Name" placeholder="Adınız" />
-                <input type="text" id="Kid2Surname" placeholder="Soyadınız" />
-              </div>
-              <div>
-                <input
-                  type="number"
-                  id="guestIdnumber"
-                  placeholder="T.C Kimlik No"
-                />
-                <input type="text" id="Kid2gender" placeholder="Cinsiyet" />
-                <input type="date" id="birthDate" placeholder="Doğum Tarihi" />
+                <input type="date" id="birthDate3" placeholder="Doğum Tarihi" />
               </div>
             </div>
           </div>
         </div>
-        <div class="purchase-summary-container">
+        <div class="purchase-summary-container green-text">
           <div class="purchase-summary">
             <h3 class="purchase-summaryHeader">REZERVASYON DETAYLARI</h3>
             <div>
@@ -241,7 +198,9 @@
               <h4 >Konaklama Detayları</h4>
               <p >Konaklama: 5* Otel</p>
               <p id="summaryAdult">1.Oda:</p>
-              <p id="summaryAdultFullName">1.Yetişkin:</p>
+              <p id="summaryGuest1">1.Yetişkin:</p>
+              <p id="summaryGuest2" class="hidden">2.Yetişkin:</p>
+              <p id="summaryGuest3" class="hidden">3.Yetişkin:</p>
               <p id="summaryKid1">Çocuk 1:</p>
               <p id="summaryKid2">Çocuk 2:</p>
             </div>

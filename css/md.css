@@ -1,6 +1,6 @@
 /* @media all and (min-width:768px) and (max-width:1023.98px) */
 
-main{padding: 36px 24px 50px 24px;
+main{padding: 36px 12px 50px 12px;
 }
 
 nav {
@@ -42,14 +42,12 @@ nav > .social-media {
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
   }
 
-  /* Kartların Açıları ve Çakışmaları */
   .card-1 { transform: rotate(-3deg); margin-bottom: -30px; z-index: 1; }
   .card-2 { transform: rotate(4deg) translateY(-20px); margin-left: -20px; z-index: 2; }
   .card-3 { transform: rotate(-2deg); margin-top: 30px; margin-left: -15px; z-index: 1; }
   .card-4 { transform: rotate(5deg) translateY(40px); z-index: 3; }
   .card-5 { transform: rotate(-4deg) translateY(-40px); margin-right: -20px; z-index: 2; }
   
-  /* Büyük Odak Kartı */
   .card-6 { 
     grid-column: span 2; 
     grid-row: span 2; 
@@ -70,7 +68,7 @@ border-radius:50px 50px;
 
 footer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 Eşit Sütun */
+  grid-template-columns: repeat(2, 1fr);
   padding: 50px 40px;
   gap: 36px 20px;
   text-align: left;
@@ -78,12 +76,12 @@ footer {
 }
 
 .footer-company {
-  grid-column: span 2; /* Logo üstte tam genişlik kapsar */
+  grid-column: span 2; 
   text-align: center;
 }
 
 .footer-info {
-  align-items: flex-start; /* Linkler sola yaslanır */
+  align-items: flex-start; 
 }
 
 .footer-contact {
@@ -105,57 +103,44 @@ footer {
 }
 
 .main-container picture {
-  height: 400px; /* Tablette resmin portre yüksekliği */
+  height: 400px; 
 }
 
 .reservation-main-container {
-  padding: 1.5rem 2rem;
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2rem;
+  }
 
-/* Kapsayıcı Kartlar */
-.contact-container,
-.guest-info-container,
-.purchase-summary {
-  padding: 1.5rem;
-}
+  .contact-info-container {
+    flex: 1; 
+  }
 
-/* İnput Gruplarını Tablette Yan Yana Dizme */
-.contact-container > div,
-.guest-info-container > div > div {
-  flex-direction: row; /* Yan yana dizilim */
-  gap: 1rem;
-}
+  .purchase-summary-container {
+    flex: 1; 
+    position: sticky;
+    top: 20px; 
+  }
 
-/* Input'ların Eşit Esnemesi */
-.contact-container input,
-.guest-info-container input {
-  flex: 1;
-}
+  .contact-container > div,
+  .guest-info-container > div > div,
+  .invoice-container > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 
-/* Özet Paneli Tablet Düzenlemeleri */
-.purchase-summary-container {
-  width: 100%;
-}
+  .contact-container input[type="text"],
+  .contact-container input[type="email"],
+  .contact-container input[type="tel"],
+  .guest-info-container input[type="text"],
+  .guest-info-container input[type="date"],
+  .invoice-container input[type="text"] {
+    flex: 1 1 180px; 
+    font-size: 0.95rem;
+  }
 
-.purchase-summary {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Bilgileri 2 sütunlu grid yapar */
-  gap: 1rem;
-  align-items: center;
-}
-
-/* Başlık ve Buton Tablette Tam Genişlik Kaplasın */
-.purchase-summaryHeader,
-.reminder-note,
-.summary-total,
-.button-purchase {
-  grid-column: span 2;
-}
-
-.summary-total {
-  text-align: right;
-  margin-top: 0.5rem;
-}
+  .contact-container div:has(#address),
+  .invoice-container div:has(#invoiceAddress) {
+    display: block;
+  }

@@ -5,9 +5,6 @@ main{
 }
 
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 18px 50px;
 }
 
@@ -17,7 +14,7 @@ nav .sidebarIcon {
 
 .logo {
   order: 1;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .navbar-list {
@@ -26,12 +23,9 @@ nav .sidebarIcon {
   right: auto;
   width: auto;
   height: auto;
-  background-color: transparent;
   box-shadow: none;
   padding: 0;
   overflow-y: visible;
-
-  display: flex;
   flex-direction: row;
   align-items: center;
   gap: 32px;
@@ -44,7 +38,6 @@ nav .sidebarIcon {
 }
 
 .navbar-list a {
-  font-size: 0.95rem;
   transition: color 0.25s ease;
 }
 
@@ -109,13 +102,7 @@ nav>.social-media {
   transform: scale(1.1);
 }
 
-.main-section {
-  display: flex;
-  height: 100vh;
-}
-
 .first-album-container {
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 15px;
@@ -123,8 +110,6 @@ nav>.social-media {
   max-width: 700px;
   max-height: 70dvh;
   height: 100%;
-  
-  
   align-items: center;
 }
 
@@ -134,9 +119,6 @@ nav>.social-media {
 }
 
 .first-album-container .photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -231,16 +213,12 @@ nav>.social-media {
   height: 100%;
   margin-block: 150px;
   margin-inline: 50px;
-  align-items: center;
 }
 
 .hero-slogan {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
   font-weight: 900;
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.1;
-  color: #273c14;
   display: inline-block;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.5px;
@@ -258,12 +236,10 @@ nav>.social-media {
 .secondary-title {
   text-align: center;
   display: inline-block;
-  color: #273c14;
   margin-bottom: 25px;
 }
 
 footer {
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
@@ -271,11 +247,9 @@ footer {
   padding: 60px 80px 40px 80px;
   max-width: 1300px;
   margin: 0 auto;
-  /* Sayfada ortalar */
   gap: 40px;
 }
 
-/* 1. Şirket / Logo */
 .footer-company {
   flex: 1;
 }
@@ -284,17 +258,14 @@ footer {
   font-size: 1.8rem;
 }
 
-/* 2 & 3. Link Grupları */
 .footer-info {
   flex: 1;
   align-items: flex-start;
   gap: 14px;
 }
 
-/* 4. İletişim Alanı */
 .footer-contact {
   flex: 1.2;
-  /* Biraz daha geniş durması için */
   align-items: flex-start;
   gap: 16px;
 }
@@ -305,6 +276,23 @@ footer {
 
 .footer-contact .mail a {
   justify-content: flex-start;
+}
+
+.main-grid-table {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.main-grid-table > div:first-child {
+  flex: 2; /* 2 Birim Genişlik Kaplar */
+}
+
+.summary-container {
+  flex: 1; /* 1 Birim Genişlik Kaplar */
+  position: sticky;
+  top: 20px; /* Kaydırırken Sabit Kalır */
 }
 
 .square-image {
@@ -332,7 +320,7 @@ footer {
 }
 
 .main-container picture {
-  height: 420px; /* Masaüstünde derin portre yüksekliği */
+  height: 420px; 
 }
 
 .main-container > div {
@@ -344,37 +332,109 @@ footer {
   box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
 }
 
-.landscape-image {
-  width: 767px;
-  height: 400px;
-  border-radius: 5px 5px 0 0;
-  object-fit: cover;
+.quota-table {
+  display: table !important;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
 }
 
+.quota-table thead {
+  display: table-header-group !important;
+  background-color: var(--deep-green);
+  color: #ffffff;
+}
 
+.quota-table tr {
+  display: table-row !important;
+  border-bottom: 1px solid rgba(36, 62, 48, 0.15);
+}
+
+.quota-table th,
+.quota-table td {
+  display: table-cell !important;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+/* 4. Mobildeki otomatik yazıları temizle */
+.quota-table td::before {
+  content: none !important;
+}
+
+.quota-table tbody {
+  display: table-row-group !important;
+}
+
+.quota-table tbody tr {
+  display: table-row !important;
+  border-bottom: 1px solid rgba(36, 62, 48, 0.1);
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Mobil etiketlerini temizle */
+.quota-table td::before {
+  content: none !important;
+}
+
+/* Sütun Genişliklerini Orantılı Dağıtma (%100 Toplam) */
+.quota-table th:nth-child(1), .quota-table td:nth-child(1) { width: 18%; } /* Giriş Tarihi */
+.quota-table th:nth-child(2), .quota-table td:nth-child(2) { width: 18%; } /* Çıkış Tarihi */
+.quota-table th:nth-child(3), .quota-table td:nth-child(3) { width: 18%; } /* Kontenjan */
+.quota-table th:nth-child(4), .quota-table td:nth-child(4) { width: 23%; } /* Tek Kişilik */
+.quota-table th:nth-child(5), .quota-table td:nth-child(5) { width: 23%; } /* Çift Kişilik */
+
+.reservationDiv {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.reservationDiv > div {
+  flex: 1;
+  min-width: 140px;
+}
+
+.reservationDiv select {
+  width: 165px;
+  padding: 0.45rem;
+  font-size: 0.8rem;
+}
+
+.summary {
+  width: 480px;
+  height: 400px;
+  border: 1px solid var(--sunny-yellow);
+}
+
+.summaryHeader {
+  background-color: var(--sunny-yellow);
+  color: var(--classic-beige);
+  text-align: center;
+  padding: 10px;
+}
+
+.landscape-image {
+  width: 785px;
+  height: 400px;
+}
 
 .faqQuestionDiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   max-width: 68vw;
-  padding: 0 25px;
-  border-radius: 5px 5px 0 0;
   margin-block-start: 10px;
-  cursor: pointer;
-  align-items: center;
 }
 
 .faqAnswerDiv {
   max-width: 67vw;
   padding: 2px 25px;
-  border-radius: 0 0 5px 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
 }
 
 .experience-container {
-  display:flex;
   margin-top: 100px;
   padding: 16px 24px;
   height: 18vh;
@@ -402,12 +462,9 @@ footer {
 }
 
 .populer-tours-header {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
   font-weight: 800;
   font-size: clamp(1.8rem, 3.4vw, 2.4rem);
   line-height: 1.1;
-  color: #273c14;
   display: inline-block;
   text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   letter-spacing: -0.5px;
@@ -417,30 +474,23 @@ footer {
 }
 
 .populer-tours-header2 {
-  color: var(--sunny-yellow);
-  font-weight: bold;
   font-size: 22px;
 }
 
 .populer-tours-inner-text {
   margin: 0;
   padding: 0;
-  color: var(--soft-green);
   font-size: 16px;
   margin-bottom: 25px;
 }
 
 .tour-row-container{
-  display: flex;
-  flex-direction: column;
   gap: 7px;
-  margin-top: 10px;
 }
 
 .tour-row {
   margin: 0;
   padding: 8px 100px;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 30px;
@@ -470,14 +520,11 @@ footer {
 }
 
 .section2 {
-  background-color: var(--soft-green);
   margin-block-end: 120px;
   padding: 15px 54px;
   min-height: 28rem;
-  display: flex;
   gap: 13rem;
   border-radius: inherit;
-  
 }
 
 .section2-slogan-div {
@@ -491,9 +538,6 @@ footer {
 }
 
 .section2-slogan {
-  color: var(--classic-beige);
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
   font-weight: 700;
   font-size: clamp(1rem, 3.5vw, 2.5rem);
   line-height: 1;
@@ -516,7 +560,6 @@ footer {
 }
 
 .travel-container-inner {
-  display: flex;
   flex-direction: column;
   margin: 3px;
   padding: 3px;
@@ -530,6 +573,15 @@ footer {
 
 }
 
+.add-room{
+  color:var(--soft-green);
+  border:none;
+  background:none;
+  margin:3px 3px 0 40rem;
+  cursor:pointer;
+  font-size:18px;
+}
+
 
 .frame-div {
   background-color: var(--classic-beige);
@@ -538,35 +590,51 @@ footer {
   border: 1px solid var(--sunny-yellow);
   padding:6px;
 }
-
 .reservation-main-container {
-    flex-direction: row; /* Sol ve Sağ olarak 2 sütuna böler */
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    gap: 2rem;
+    flex-direction: row;
     align-items: flex-start;
+    padding: 2rem;
   }
 
-  /* Sol Taraf (Form) */
   .contact-info-container {
-    flex: 1 1 65%;
+    flex: 2; 
+  }
+
+  .purchase-summary-container {
+    flex: 1; 
+    position: sticky;
+    top: 20px; 
   }
 
   .contact-container > div,
-  .guest-info-container > div > div {
+  .guest-info-container > div > div,
+  .invoice-container > div {
     flex-direction: row;
-    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: flex-start;
   }
 
-  .contact-container input,
-  .guest-info-container input {
-    flex: 1;
+  .contact-container input[type="text"],
+  .contact-container input[type="email"],
+  .contact-container input[type="tel"],
+  .guest-info-container input[type="text"],
+  .guest-info-container input[type="date"],
+  .invoice-container input[type="text"] {
+    flex: 1 1 180px; 
+    font-size: 0.95rem;
   }
 
-  /* Sağ Taraf (Summary Özet Paneli) */
-  .purchase-summary-container {
-    flex: 1 1 35%;
-    position: sticky;
-    top: 2rem; /* Ekran aşağı kaydırılırken sağ paneli sabit tutar */
+  .contact-container div:has(#address),
+  .invoice-container div:has(#invoiceAddress) {
+    display: block;
   }
+.button-purchase{
+   background-color:var(--sunny-yellow);
+  color:var(--soft-green);
+  display: block;
+  width: 70%;
+  text-align: center;
+  padding: 0.85rem;
+  margin:3px auto;
+  box-sizing: border-box;
+}
