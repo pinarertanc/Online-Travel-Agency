@@ -1,3 +1,6 @@
+
+const UNSPLASH_ACCESS_KEY ="7Z3F6q_6Hm0teI4PclIiywvRbFfSaaply61hfl9FGZg";
+
 const urlParams = new URLSearchParams(window.location.search);  
 const selectedTourId = urlParams.get("id");
 
@@ -23,7 +26,16 @@ const selectedKid1 = document.getElementById("kid1-select");
 const selectedKid2 = document.getElementById("kid2-select");
 const tableBody = document.getElementById("dynamic-table-body");
 
+const desktopImage = document.getElementById("desktopImage");
+const mediumImage = document.getElementById("mediumImage");
+const smallImage = document.getElementById("smallImage");
+const imageCaption = document.getElementById("imageCaption");
 
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let tourPhotos = [];
+let currentPhotoIndex = 0;
 
 
 window.addEventListener("DOMContentLoaded", ()=>{
@@ -72,7 +84,65 @@ if(savedState){
 });
 updateSummary();
 getTotalPrice();
+
+const searchImage = `${ACTIVE_TOUR.id} travel landscape destination hd`;
+fetchTourPhotos(searchImage);
+
 });
+
+async function fetchTourPhotos(image){
+  try{ 
+    const response = await fetch (
+      `https://api.unsplash.com/search/photos?page=1&per_page=5&query=${encodeURIComponent(image)}&orientation=landscape&order_by=relevant&content_filter=high&client_id=${UNSPLASH_ACCESS_KEY}`
+    );
+
+    if (!response.ok){
+      throw Error("Unsplash API isteği başarısız oldu.");
+    }
+
+    const fetchData = await response.json();
+    
+    if(fetchData.results && fetchData.results.length > 0){
+      tourPhotos = fetchData.results.map((photo)=>({
+        desktop: photo.urls.full || photo.urls.regular,
+        tablet: photo.urls.regular,
+        mobile: photo.urls.small,
+        alt: `${ACTIVE_TOUR.name} görseli`
+      }));
+
+      showPhoto(0);
+    } 
+      } catch(error) {
+      console.error("Görsel Yükleme Hatası:", error); 
+    }
+   }
+
+   function showPhoto(index){
+    if(!tourPhotos[index]) return;
+
+    const photo = tourPhotos[index];
+
+    if(desktopImage) desktopImage.srcset = photo.desktop;
+    if(mediumImage) mediumImage.srcset = photo.tablet;
+    if(smallImage) smallImage.src = photo.mobile;
+    smallImage.alt = photo.alt;
+
+   }
+
+   prevBtn?.addEventListener("click", () => {
+  if (tourPhotos.length === 0) return;
+  currentPhotoIndex = (currentPhotoIndex - 1 + tourPhotos.length) % tourPhotos.length;
+  showPhoto(currentPhotoIndex);
+  });
+
+  nextBtn?.addEventListener("click", () => {
+  if (tourPhotos.length === 0) return;
+  currentPhotoIndex = (currentPhotoIndex + 1) % tourPhotos.length;
+  showPhoto(currentPhotoIndex);
+ });
+
+  
+
 
 function updateSummary(){
   summaryDate.textContent = "Tur Tarihi: " + selectedDate.value;
@@ -114,15 +184,6 @@ for (const [day, activity] of Object.entries(ACTIVE_TOUR.program)) {
   tourProgram.appendChild(p);
 }
 
-const desktopImage = document.getElementById("desktopImage");
-const mediumImage = document.getElementById("mediumImage");
-const smallImage = document.getElementById("smallImage");
-
-desktopImage.srcset = ACTIVE_TOUR.images.desktop;
-mediumImage.srcset = ACTIVE_TOUR.images.tablet;
-smallImage.src = ACTIVE_TOUR.images.mobile;
-
-
 function saveToLocalStorage() {
   const reservationState = {
     date: selectedDate.value,
@@ -143,11 +204,5 @@ purchaseButton.addEventListener("click",(e)=>{
     alert("Lütfen tüm tercih alanlarının doldurulduğundan emin olun.");
   }
 });
-
-const addRoomButton = document.getElementById("add-room");
-
-addRoomButton.addEventListener("click",(e)=>{
-  const NewRoomRow = document.createElement("")
-})
 
    

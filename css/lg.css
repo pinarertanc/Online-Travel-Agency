@@ -638,3 +638,25 @@ footer {
   margin:3px auto;
   box-sizing: border-box;
 }
+
+.slider-btn {
+  width: 42px;
+  height: 42px;
+  font-size: 20px;
+}
+
+/* Sol ve Sağ Okların Kenar Boşluğunu Artırma */
+.prev-btn {
+  left: 15px;
+}
+
+.next-btn {
+  right: 15px;
+}
+
+/* Hover Efekti (Mouse Üzerine Gelince) */
+.slider-btn:hover {
+  background-color: var(--deep-green, #12221a); /* %100 Gaz Verilmiş Koyu Yeşil */
+  color: var(--sunny-yellow, #ffc107); /* Varsa marka sarın/vurgu rengin */
+  transform: translateY(-50%) scale(1.08); /* Hafif Büyüme */
+}

@@ -1,7 +1,7 @@
 // tourdata.js
 const TOUR_DATA = [
   {
-    id: "hallstatt",
+    id: "hallstadt wiev",
     name: "UNESCO Korumasında Hallstatt",
     country:"Avusturya",
     dates: [
@@ -44,7 +44,7 @@ const TOUR_DATA = [
     info: "Avusturya'nın masalsı göl kenarı köyü Hallstatt, tarihi tuz madeni ve muhteşem manzaralı Skywalk seyir terası gezintisi."
   },
   {
-    id: "istanbul",
+    id: "istanbul wiev",
     name: "Masalsı Şehir İstanbul",
     country: "Turkiye",
     dates: [
@@ -87,7 +87,7 @@ const TOUR_DATA = [
     info: "Tarihi yarımada, Boğaziçi ve kültürel rotaları keşif. Gündüzü ve gecesi birbirinden farklı İstanbul deneyimi."
   },
   {
-    id: "norvec",
+    id: "kuzey ışıkları",
     name: "Norveç Kuzey Işıkları",
     country:"Norveç",
     dates: [

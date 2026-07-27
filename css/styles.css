@@ -501,7 +501,7 @@ p>a {
   padding: 0.75rem 0.85rem;
   border: 1px solid rgba(36, 62, 48, 0.25);
   border-radius: 8px;
-  font-size: 16px; /* Mobilde safari/chrome yakınlaştırma engelleyicisi */
+  font-size: 16px;
   color: var(--deep-green);
   background-color: #FBF9F1;
   outline: none;
@@ -958,4 +958,58 @@ label[for="InvoiceInformation"] {
   font-size: 0.8rem;
   font-weight: 600;
   display: block;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden; /* Resim köşe kavislerinden taşmasın */
+  box-shadow: 0 4px 12px rgba(18, 34, 26, 0.08);
+}
+
+/* Kapsayıcı İçindeki Görsel */
+.slider-container .landscape-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Ortak Ok Buton Stilleri */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(18, 34, 26, 0.5); /* Markanın koyu yeşili (%50 saydam) */
+  color: #ffffff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%; /* Dairesel buton */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent; /* Mobilde dokununca çıkan mavi kutuyu kaldırır */
+}
+
+/* Sol Ok Butonu */
+.prev-btn {
+  left: 10px;
+}
+
+/* Sağ Ok Butonu */
+.next-btn {
+  right: 10px;
+}
+
+/* Mobilde Butona Basılma Hissi */
+.slider-btn:active {
+  transform: translateY(-50%) scale(0.92);
+  background-color: var(--deep-green, #12221a);
 }
